@@ -1,0 +1,6 @@
+{
+    "[javascript][typescript]": {
+        "editor.tabSize": 2
+    },
+    "cmake.ignoreCMakeListsMissing": true
+}
