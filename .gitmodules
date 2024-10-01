@@ -1,6 +1,6 @@
 [submodule "flutter-frontend"]
 	path = flutter-frontend
-	url = .\\flutter-frontend\\
+	url = https://github.com/hansung-taeyang/flutter-frontend.git
 [submodule "node-backend"]
 	path = node-backend
-	url = https://github.com/hansung-taeyang/precapstone-2024.git
+	url = https://github.com/hansung-taeyang/node-backend.git
