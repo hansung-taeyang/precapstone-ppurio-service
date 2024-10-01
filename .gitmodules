@@ -1,0 +1,3 @@
+[submodule "flutter-frontend"]
+	path = flutter-frontend
+	url = .\\flutter-frontend\\
