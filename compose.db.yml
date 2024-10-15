@@ -7,6 +7,7 @@ services:
       - db_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root # change in production
+      MYSQL_DATABASE: capstonedb
     networks:
       - backend
 
