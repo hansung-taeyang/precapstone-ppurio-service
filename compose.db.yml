@@ -1,5 +1,8 @@
+name: ppurio-service
+
 services:
   db:
+    container_name: db
     image: mysql:lts
     ports:
       - "3307:3306"
@@ -13,6 +16,7 @@ services:
 
 volumes:
   db_data:
+    name: db_data
 
 networks:
   backend:
