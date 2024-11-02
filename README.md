@@ -102,17 +102,10 @@ $ docker-compose -f ../compose.db.yml up -d
  ✔ Volume "db_data" Created
  ✔ Container db     Started
 
-$ npx drizzle-kit push
+$ npx drizzle-kit migrate
 No config path provided, using default 'drizzle.config.js'
-Reading config file '...\node-backend\drizzle.config.js'
+Reading config file 'D:\Dev\Computer-Sceience\Year3\PRECAP_TEST\node-backend\drizzle.config.js'
 [dotenvx@1.14.0] injecting env (0) from .env
-[✓] Pulling schema from database...
-Reading schema files:
-...\node-backend\src\db\tables\images.ts
-...\node-backend\src\db\tables\students.ts
-...\node-backend\src\db\tables\users.ts
-
-[✓] Changes applied
 
 $ npm run dev
 
@@ -126,7 +119,7 @@ $ npm run dev
 
 마지막으로 위의 명령어를 실행하여 MySQL DB를 Docker에서 실행시켜두고, 백엔드 서버를 가동합니다.
 
-> `npx drizzle-kit push`에서 출력되는 경로명은 당연히 이 문서의 것과 다릅니다! 걱정하지 마세요.
+> `npx drizzle-kit migrate`에서 출력되는 경로명은 당연히 이 문서의 것과 다릅니다! 걱정하지 마세요.
 
 ## 주요 백엔드 API 주소
 
