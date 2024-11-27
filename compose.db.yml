@@ -1,4 +1,4 @@
-name: ppurio-service
+name: dev-ppurio-service
 
 services:
   db:
@@ -13,12 +13,7 @@ services:
       MYSQL_ROOT_PASSWORD: root # change in production
       MYSQL_DATABASE: capstonedb
       TZ: Asia/Seoul
-    networks:
-      - backend
 
 volumes:
   db_data:
     name: db_data
-
-networks:
-  backend:

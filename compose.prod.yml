@@ -1,0 +1,56 @@
+name: ppurio-service
+
+services:
+  backend:
+    container_name: backend
+    image: backend
+    build:
+      context: ./node-backend
+    # To be removed in production
+    # ports:
+    #   - "3000:3000"
+    working_dir: /app
+    depends_on:
+      db:
+        condition: service_healthy
+    
+    # To be removed in production
+    env_file:
+      - "node-backend/.env.keys"
+
+    volumes:
+      - saved_images:/app/public/images
+    
+  frontend:
+    container_name: frontend
+    image: frontend
+    build:
+      context: ./flutter-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    container_name: db
+    image: mysql:lts
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - db_data:/var/lib/mysql
+    # ports:
+    #   - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: capstonedb
+      TZ: Asia/Seoul
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+volumes:
+  saved_images:
+    name: saved_images
+  db_data:
+    name: db_data
