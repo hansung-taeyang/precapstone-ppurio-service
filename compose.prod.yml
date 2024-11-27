@@ -15,8 +15,8 @@ services:
         condition: service_healthy
     
     # To be removed in production
-    env_file:
-      - "node-backend/.env.keys"
+    # env_file:
+    #   - "node-backend/.env.keys"
 
     volumes:
       - saved_images:/app/public/images
