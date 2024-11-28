@@ -15,19 +15,17 @@ services:
         condition: service_healthy
     
     # To be removed in production
-    # env_file:
-    #   - "node-backend/.env.keys"
+    env_file:
+      - "node-backend/.env.keys"
 
     volumes:
       - saved_images:/app/public/images
     
   frontend:
     container_name: frontend
-    image: frontend
-    build:
-      context: ./flutter-frontend
+    image: nyhryan/frontend:main
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
       db:
         condition: service_healthy
