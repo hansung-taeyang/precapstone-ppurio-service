@@ -1,19 +1,19 @@
 name: dev-ppurio-service
 
 services:
-  db:
-    container_name: db
+  db_dev:
+    container_name: db_dev
     image: mysql:lts
     ports:
       - "3307:3306"
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data_dev:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root # change in production
       MYSQL_DATABASE: capstonedb
       TZ: Asia/Seoul
 
 volumes:
-  db_data:
-    name: db_data
+  db_data_dev:
+    name: db_data_dev
