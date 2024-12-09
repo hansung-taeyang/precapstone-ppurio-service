@@ -1,5 +1,10 @@
 # precapstone-2024
 
+## 서비스 다이어그램
+
+![docker](https://github.com/user-attachments/assets/0bbab9ae-9931-4211-bfe3-1332feef6e6b)
+
+
 ## 본 저장소 설명 및 클론 방법
 
 ```bash
